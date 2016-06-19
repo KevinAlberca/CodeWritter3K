@@ -20,6 +20,8 @@ public class EditorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.editor_layout);
+
         this.language = getIntent().getExtras().getString("language");
         Log.d("LANGUAGE", this.language);
     }
