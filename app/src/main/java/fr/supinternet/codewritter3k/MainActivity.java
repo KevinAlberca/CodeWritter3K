@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.main_activity_html_css_btn) public void goToHTMLAndCSS() {
+    @OnClick(R.id.main_html_btn) public void goToHTMLAndCSS() {
         Intent editorIntent = new Intent(this, EditorActivity.class);
         editorIntent.putExtra("language", "HTML/CSS");
         startActivity(editorIntent);
