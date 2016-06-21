@@ -15,4 +15,14 @@
         android:textColor="@color/primaryWhite"
         android:layout_alignParentBottom="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_toLeftOf="@+id/editor_area"
+        android:layout_toStartOf="@+id/editor_area"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>
