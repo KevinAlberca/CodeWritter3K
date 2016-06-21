@@ -4,12 +4,15 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="348dp"
+        android:layout_width="355dp"
         android:layout_height="match_parent"
-        android:id="@+id/editText"
-        android:layout_gravity="right"
+        android:id="@+id/editor_area"
+        android:gravity="top|left"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:background="@color/primaryBlack"
+        android:textColor="@color/primaryWhite"
         android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

@@ -3,6 +3,8 @@ package fr.supinternet.codewritter3k;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -14,7 +16,7 @@ import butterknife.BindView;
 public class EditorActivity extends AppCompatActivity {
 
     public String language;
-    @BindView(R.id.editText)
+    @BindView(R.id.editor_area)
     EditText userCode;
 
     @Override

@@ -5,21 +5,24 @@
     android:layout_height="match_parent"
     tools:context="fr.supinternet.codewritter3k.MainActivity">
 
+    <Button
+        android:layout_width="181dp"
+        android:layout_height="128dp"
+        android:text="@string/html_css"
+        android:id="@+id/main_activity_html_css_btn"
+        android:width="0dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/copyright"
         android:id="@+id/main_activity_copyright"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/html_css"
-        android:id="@+id/main_activity_html_css_btn"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 </RelativeLayout>
