@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">CodeWritter3K</string>
+    <string name="app_name">CodeWritter3000</string>
+    <string name="copyright">Copyright CodeWritter3000 - SUP\'Internet Project</string>
+    <string name="html">HTML</string>
+    <string name="css">CSS</string>
+    <string name="javascript">JavaScript</string>
+    <string name="php">PHP</string>
 </resources>
