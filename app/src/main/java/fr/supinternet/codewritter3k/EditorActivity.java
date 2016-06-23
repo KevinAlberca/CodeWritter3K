@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by AwH on 19/06/16.
@@ -19,16 +20,16 @@ public class EditorActivity extends AppCompatActivity {
     public String language;
     @BindView(R.id.editor_area)
     EditText userCode;
+    @BindView(R.id.lines_area)
     TextView lineArea;
     private Integer lines = 1;
+    CharSequence lastText = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editor_layout);
-
-        userCode = (EditText)findViewById(R.id.editor_area);
-        lineArea = (TextView)findViewById(R.id.lines_area);
+        ButterKnife.bind(this);
 
         lineArea.setText("1");
 
@@ -56,6 +57,13 @@ public class EditorActivity extends AppCompatActivity {
                     numberOfLines += i + "\n";
                 }
                 lineArea.setText(numberOfLines);
+
+                /*if (s != lastText) {
+                    System.out.println(s);
+
+                    lastText = s;
+                    //userCode.setText(lastText);
+                }*/
 
             }
         });
