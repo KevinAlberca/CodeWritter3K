@@ -52,8 +52,8 @@ public class EditorActivity extends AppCompatActivity {
 
                 lines = userCode.getLineCount();
                 String numberOfLines = "";
-                for (Integer i = 0; i < lines; i++) {
-                    numberOfLines += (i+1) + "\n";
+                for (Integer i = 1; i <= lines; i++) {
+                    numberOfLines += i + "\n";
                 }
                 lineArea.setText(numberOfLines);
 

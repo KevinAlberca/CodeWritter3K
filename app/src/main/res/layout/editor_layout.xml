@@ -4,10 +4,10 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="355dp"
+        android:layout_width="335dp"
         android:layout_height="match_parent"
         android:id="@+id/editor_area"
-        android:gravity="top|left"
+        android:gravity="start"
         android:layout_alignParentTop="true"
         android:textSize="18sp"
         android:layout_alignParentRight="true"
@@ -17,7 +17,7 @@
         android:layout_alignParentBottom="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:text="New Text"
