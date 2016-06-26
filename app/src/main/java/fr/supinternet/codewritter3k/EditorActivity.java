@@ -53,6 +53,8 @@ public class EditorActivity extends AppCompatActivity {
         types.put("normal", Color.WHITE);
         types.put("balise", Color.YELLOW);
         types.put("text", Color.RED);
+        types.put("css", Color.GRAY);
+        types.put("color", Color.CYAN);
 
         userCode.addTextChangedListener(new TextWatcher() {
 
@@ -103,6 +105,7 @@ public class EditorActivity extends AppCompatActivity {
         Boolean isNotNormal = false;
         String type = "normal";
         Character endOfString = ' ';
+        Integer endOfQuote = 0;
         SpannableString spanText = new SpannableString(text);
 
         for (Integer i = 0; i < text.length(); i++) {
@@ -116,15 +119,41 @@ public class EditorActivity extends AppCompatActivity {
                     isNotNormal = true;
                     break;
                 case '"':
-                    type = "text";
+                    if (!i.equals(endOfQuote)) {
+                        System.out.println("ok");
+                        type = "text";
+                        isNotNormal = true;
+                        startOfSpan = i;
+                        endOfString = '"';
+                    }
+                    break;
+                case '{':
+                    type = "css";
                     isNotNormal = true;
                     startOfSpan = i;
-                    endOfString = '"';
+                    endOfString = '}';
+                    break;
+                case '#':
+                    type = "color";
+                    isNotNormal = true;
+                    startOfSpan = i;
+                    endOfString = ';';
+                    break;
+                case 'v':
+                    if (text.substring(i, i+4).equals("var ")) {
+                        spanText.setSpan(new ForegroundColorSpan(Color.GREEN), i, i+3, 0);
+                    }
+                    break;
+                case 'f':
+                    if (text.substring(i, i+9).equals("function ")) {
+                        spanText.setSpan(new ForegroundColorSpan(Color.MAGENTA), i, i+9, 0);
+                    }
                     break;
             }
 
             if (isNotNormal) {
                 endOfSpan = findNext(i + 1, text, endOfString);
+                if (endOfString == '"') endOfQuote = endOfSpan - 1;
                 spanText.setSpan(new ForegroundColorSpan(types.get(type)), startOfSpan, endOfSpan, 0);
                 isNotNormal = false;
                 type = "normal";
