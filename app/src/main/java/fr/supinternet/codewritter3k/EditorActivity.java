@@ -9,8 +9,14 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by AwH on 19/06/16.
@@ -67,5 +73,10 @@ public class EditorActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @OnClick(R.id.editor_save_btn)
+    public void saveFile() {
+        SaveActivity sA = new SaveActivity();
     }
 }
